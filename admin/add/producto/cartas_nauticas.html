@@ -1,0 +1,60 @@
+#I need a html5 page that can be use to add a new carta nautica to the database
+#The page should have a form with the following fields:
+    #titulo
+    #tipo_carta, this is a select tag with 2 options:
+        #electronica,value e
+        #papel,value p
+    #escala
+    #edicion
+    #datum
+    #region
+#And the form must be organized in a table
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/producto/cartasnauticasadd.php
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cartas nauticas</title>
+</head>
+<body>
+    <p>
+        <form action="http://localhost/admin/add/producto/cartasnauticasadd.php" method="post">
+            <table>
+                <tr>
+                    <td>titulo</td>
+                    <td><input type="text" name="titulo"></td>
+                </tr>
+                <tr>
+                    <td>tipo_carta</td>
+                    <td>
+                        <select name="tipo_carta">
+                            <option value="e">electronica</option>
+                            <option value="p">papel</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>escala</td>
+                    <td><input type="text" name="escala"></td>
+                </tr>
+                <tr>
+                    <td>edicion</td>
+                    <td><input type="text" name="edicion"></td>
+                </tr>
+                <tr>
+                    <td>datum</td>
+                    <td><input type="text" name="datum"></td>
+                </tr>
+                <tr>
+                    <td>region</td>
+                    <td><input type="text" name="region"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
+</body>
+</html>
