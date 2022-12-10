@@ -1,29 +1,10 @@
-#I need a HTML5 webpage that can used to submit measurements of boya to the database
-#The page should have a form with the following fields:
-    #fecha
-    #hora
-    #velocidad_viento
-    #velocidad_maxima_viento
-    #direccion_viento
-    #altura_significativa
-    #altura_maxima
-    #direccion_maxima
-    #temperatura_aire
-    #coordenadas
-    #direccion_media
-    #periodo_peak
-    #temperatura_agua
-    #humedad_relativa
-#And a option tag that displays a list of boyas stored in the database
-<?php
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Medicion</title>
     </head>
     <body>
-        <form action="medicion.php" method="post">
+        <form action="./medicionadd.php" method="post">
             <label for="fecha">Fecha</label>
             <input type="date" name="fecha" id="fecha">
             <label for="hora">Hora</label>
