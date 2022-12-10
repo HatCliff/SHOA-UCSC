@@ -1,0 +1,42 @@
+#I need a html5 page that can be use to add a new boya to the database
+#The page should have a form with the following fields:
+    #hora
+    #fecha
+    #descripcion
+    #referencia_geografica
+#And the form must be organized in a table
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/snam/snamadd.php
+<!DOCTYPE html>
+<html>
+<head>
+    <title>snam</title>
+</head>
+<body>
+    <p>
+        <form action="http://localhost/admin/add/snam/snamadd.php" method="post">
+            <table>
+                <tr>
+                    <td>hora</td>
+                    <td><input type="text" name="hora"></td>
+                </tr>
+                <tr>
+                    <td>fecha</td>
+                    <td><input type="text" name="fecha"></td>
+                </tr>
+                <tr>
+                    <td>descripcion</td>
+                    <td><input type="text" name="descripcion"></td>
+                </tr>
+                <tr>
+                    <td>referencia_geografica</td>
+                    <td><input type="text" name="referencia_geografica"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
+</body>
+</html>

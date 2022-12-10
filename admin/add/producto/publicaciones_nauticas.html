@@ -1,0 +1,45 @@
+#I need a html5 page that can be use to add a new publicaciones nauticas to the database
+#The page should have a form with the following fields:
+    #edicion
+#And the form must be organized in a table
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/producto/planos-costeros-add.php
+<!doctype html>
+<html>
+<head>
+    <title>publicaciones_nauticas</title>
+</head>
+<body>
+    <p>
+        <form action="http://localhost/admin/add/producto/publicaciones-nauticas-add.php" method="post">
+            <table>
+                <tr>
+                    <td>rut_empresa</td>
+                    <td><input type="text" name="rut_empresa"></td>
+                </tr>
+                <tr>
+                    <td>nombre</td>
+                    <td><input type="text" name="nombre"></td>
+                </tr>
+                <tr>
+                    <td>precio</td>
+                    <td><input type="text" name="precio"></td>
+                </tr>
+                <tr>
+                    <td>descripcion</td>
+                    <td><input type="text" name="descripcion"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+                <tr>
+                    <td>edicion</td>
+                    <td><input type="text" name="edicion"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
+</html>
