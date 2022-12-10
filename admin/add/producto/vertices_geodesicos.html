@@ -1,20 +1,18 @@
-#I need a html5 page that can be use to add a new boya to the database
+#I need a html5 page that can be use to add a new vertices geodesicos to the database
 #The page should have a form with the following fields:
-    #rut_empresa
-    #nombre
-    #precio
-    #descripcion
+    #latitud
+    #tipo_altura
 #And the form must be organized in a table
 #The page should have a submit button that will submit the form to the following URL:
-    #http://localhost/admin/add/producto/prodadd.php
-<!DOCTYPE html>
+    #http://localhost/admin/add/producto/planos-costeros-add.php
+<!doctype html>
 <html>
 <head>
-    <title>producto</title>
+    <title>vertices_geodesicos</title>
 </head>
 <body>
     <p>
-        <form action="http://localhost/admin/add/producto/prodadd.php" method="post">
+        <form action="http://localhost/admin/add/producto/vertices-geodesicos-add.php" method="post">
             <table>
                 <tr>
                     <td>rut_empresa</td>
@@ -35,7 +33,19 @@
                 <tr>
                     <td><input type="submit" value="Submit"></td>
                 </tr>
+                <tr>
+                    <td>latitud</td>
+                    <td><input type="text" name="latitud"></td>
+                </tr>
+                <tr>
+                    <td>tipo_altura</td>
+                    <td><input type="text" name="tipo_altura"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
             </table>
         </form>
-    </p>
+    </p>s
+</body>
 </html>

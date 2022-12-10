@@ -1,0 +1,84 @@
+#I need a html5 page that can be use to add a new solicitud_autorizacion to the database
+#The page should have a form with the following fields:
+    #rut_empresa
+    #correo_electronico
+    #contraseña
+    #nombre
+    #telefono
+    #direccion
+
+    #rut_representante_solicitud
+    #nombre_representante_solicitud
+    #empresa_institucion
+    #razon_social
+    #actividad_giro
+    #nacionalidad
+    #tipo_autoriacion
+#And the form must be organized in a table
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/tramite/solicitud_autorizacion-add.php
+
+<!doctype html>
+<html>
+<head>
+    <title>solicitud_autorizacion</title>
+</head>
+    <body>
+        <form action="http://localhost/admin/add/tramite/solicitud_autorizacion-add.php" method="post">
+            <table>
+                <tr>
+                    <td>rut_empresa</td>
+                    <td><input type="text" name="rut_empresa"></td>
+                </tr>
+                <tr>
+                    <td>correo_electronico</td>
+                    <td><input type="text" name="correo_electronico"></td>
+                </tr>
+                <tr>
+                    <td>contraseña</td>
+                    <td><input type="text" name="contraseña"></td>
+                </tr>
+                <tr>
+                    <td>nombre</td>
+                    <td><input type="text" name="nombre"></td>
+                </tr>
+                <tr>
+                    <td>telefono</td>
+                    <td><input type="text" name="telefono"></td>
+                </tr>
+                <tr>
+                    <td>direccion</td>
+                    <td><input type="text" name="direccion"></td>
+                </tr>
+                <tr>
+                    <td>rut_representante_solicitud</td>
+                    <td><input type="text" name="rut_representante_solicitud"></td>
+                </tr>
+                <tr>
+                    <td>nombre_representante_solicitud</td>
+                    <td><input type="text" name="nombre_representante_solicitud"></td>
+                </tr>
+                <tr>
+                    <td>empresa_institucion</td>
+                    <td><input type="text" name="empresa_institucion"></td>
+                </tr>
+                <tr>
+                    <td>razon_social</td>
+                    <td><input type="text" name="razon_social"></td>
+                </tr>
+                <tr>
+                    <td>actividad_giro</td>
+                    <td><input type="text" name="actividad_giro"></td>
+                </tr>
+                <tr>
+                    <td>nacionalidad</td>
+                    <td><input type="text" name="nacionalidad"></td>
+                </tr>
+                <tr>
+                    <td>tipo_autoriacion</td>
+                    <td><input type="text" name="tipo_autoriacion"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit"
+    </body>
+</html>

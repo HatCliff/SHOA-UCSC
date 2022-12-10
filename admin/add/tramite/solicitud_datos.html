@@ -1,0 +1,77 @@
+#I need a html5 page that can be use to add a new solicitud_autorizacion to the database
+#The page should have a form with the following fields:
+    #rut_empresa
+    #correo_electronico
+    #contraseña
+    #nombre
+    #telefono
+    #direccion
+
+    #tipo_datos
+    #intencion_uso
+    #organizacion
+    #nombre_solicitante
+    #detalle_datos
+#And the form must be organized in a table
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/tramite/solicitud_datos-add.php
+
+<!doctype html>
+<html>
+<head>
+    <title>solicitud_datos</title>
+</head>
+<body>
+    <form action="http://localhost/admin/add/tramite/solicitud_datos-add.php" method="post">
+        <table>
+            <tr>
+                <td>rut_empresa</td>
+                <td><input type="text" name="rut_empresa"></td>
+            </tr>
+            <tr>
+                <td>correo_electronico</td>
+                <td><input type="text" name="correo_electronico"></td>
+            </tr>
+            <tr>
+                <td>contraseña</td>
+                <td><input type="text" name="contraseña"></td>
+            </tr>
+            <tr>
+                <td>nombre</td>
+                <td><input type="text" name="nombre"></td>
+            </tr>
+            <tr>
+                <td>telefono</td>
+                <td><input type="text" name="telefono"></td>
+            </tr>
+            <tr>
+                <td>direccion</td>
+                <td><input type="text" name="direccion"></td>
+            </tr>
+            <tr>
+                <td>tipo_datos</td>
+                <td><input type="text" name="tipo_datos"></td>
+            </tr>
+            <tr>
+                <td>intencion_uso</td>
+                <td><input type="text" name="intencion_uso"></td>
+            </tr>
+            <tr>
+                <td>organizacion</td>
+                <td><input type="text" name="organizacion"></td>
+            </tr>
+            <tr>
+                <td>nombre_solicitante</td>
+                <td><input type="text" name="nombre_solicitante"></td>
+            </tr>
+            <tr>
+                <td>detalle_datos</td>
+                <td><input type="text" name="detalle_datos"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

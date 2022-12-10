@@ -1,18 +1,17 @@
-#I need a html5 page that can be use to add a new boya to the database
+#I need a html5 page that can be use to add a new publicaciones nauticas to the database
 #The page should have a form with the following fields:
-    #mes
-    #año
+    #edicion
 #And the form must be organized in a table
 #The page should have a submit button that will submit the form to the following URL:
-    #http://localhost/admin/add/producto/boletinadd.php
-<!DOCTYPE html>
+    #http://localhost/admin/add/producto/planos-costeros-add.php
+<!doctype html>
 <html>
 <head>
-    <title>boletin</title>
+    <title>publicaciones_nauticas</title>
 </head>
 <body>
     <p>
-        <form action="http://localhost/admin/add/producto/boletinadd.php" method="post">
+        <form action="http://localhost/admin/add/producto/publicaciones-nauticas-add.php" method="post">
             <table>
                 <tr>
                     <td>rut_empresa</td>
@@ -34,12 +33,8 @@
                     <td><input type="submit" value="Submit"></td>
                 </tr>
                 <tr>
-                    <td>mes</td>
-                    <td><input type="text" name="mes"></td>
-                </tr>
-                <tr>
-                    <td>año</td>
-                    <td><input type="text" name="año"></td>
+                    <td>edicion</td>
+                    <td><input type="text" name="edicion"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Submit"></td>
