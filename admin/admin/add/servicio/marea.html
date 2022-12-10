@@ -1,0 +1,34 @@
+#I need a HTML5 Page that can be used to add a new radioaviso to the database
+#The page should have a form with the following fields:
+    #altura
+    #nombre_puerto 
+
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/servicio/mareaadd.php
+##And the form must be organiced in a table
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>marea</title>
+</head>
+<body>
+    <p>
+        <form action="http://localhost/admin/add/servicio/mareaadd.php" method="post">
+            <table>
+                <tr>
+                    <td>altura</td>
+                    <td><input type="text" name="altura"></td>
+                </tr>
+                <tr>
+                    <td>nombre_puerto</td>
+                    <td><input type="text" name="nombre_puerto"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
+</body>
+</html>
