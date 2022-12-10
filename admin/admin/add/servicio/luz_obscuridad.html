@@ -1,0 +1,72 @@
+#I need a HTML5 Page that can be used to add a new radioaviso to the database
+#The page should have a form with the following fields:
+    #fecha
+    #hora
+    #orto_luna 
+    #ocaso_luna
+    #orto_sol
+    #ocaso_sol
+    #aurora_civil
+    #aurora_nautica
+    #crepusculo_nautico
+    #crepusculo_civil
+#And the form must be organized in a table
+#The page should have a submit button that will submit the form to the following URL:
+    #http://localhost/admin/add/servicio/luz_obscuridadadd.php
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>luz_obscuridad</title>
+</head>
+<body>
+    <p>
+        <form action="http://localhost/admin/add/servicio/luz_obscuridadadd.php" method="post">
+            <table>
+                <tr>
+                    <td>fecha</td>
+                    <td><input type="text" name="fecha"></td>
+                </tr>
+                <tr>
+                    <td>hora</td>
+                    <td><input type="text" name="hora"></td>
+                </tr>
+                <tr>
+                    <td>orto_luna</td>
+                    <td><input type="text" name="orto_luna"></td>
+                </tr>
+                <tr>
+                    <td>ocaso_luna</td>
+                    <td><input type="text" name="ocaso_luna"></td>
+                </tr>
+                <tr>
+                    <td>orto_sol</td>
+                    <td><input type="text" name="orto_sol"></td>
+                </tr>
+                <tr>
+                    <td>ocaso_sol</td>
+                    <td><input type="text" name="ocaso_sol"></td>
+                </tr>
+                <tr>
+                    <td>aurora_civil</td>
+                    <td><input type="text" name="aurora_civil"></td>
+                </tr>
+                <tr>
+                    <td>aurora_nautica</td>
+                    <td><input type="text" name="aurora_nautica"></td>
+                </tr>
+                <tr>
+                    <td>crepusculo_nautico</td>
+                    <td><input type="text" name="crepusculo_nautico"></td>
+                </tr>
+                <tr>
+                    <td>crepusculo_civil</td>
+                    <td><input type="text" name="crepusculo_civil"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
+</body>
