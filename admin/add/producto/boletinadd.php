@@ -10,6 +10,7 @@ if (!$conn) {
 }
 #Get the values from the form boletin.html
 #PRODUCTO
+
 $rut_empresa = $_POST['rut_empresa'];
 $nombre_empresa = $_POST['nombre'];
 $precio = $_POST['precio'];
@@ -19,8 +20,8 @@ $mes = $_POST['mes'];
 $anio = $_POST['anio'];
 
 #sql query to insert the values on product
-$sql = "INSERT INTO producto (rut_empresa, nombre, precio, descripcion) 
-        VALUES ('$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
+$sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
+        VALUES (1 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
 
 
 #sql query to insert the values
