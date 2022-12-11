@@ -15,9 +15,9 @@ $rut_empresa = $_POST['rut_empresa'];
 $nombre_empresa = $_POST['nombre'];
 $precio = $_POST['precio'];
 $descripcion = $_POST['descripcion'];
-#Vertices Geodesicos
-$latitud = $_POST['latitud'];
-$tipo_altura = $_POST['tipo_altura'];
+#BOLETIN
+$mes = $_POST['mes'];
+$anio = $_POST['anio'];
 
 #sql query to insert the values on product
 $sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
@@ -25,7 +25,7 @@ $sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descrip
 
 
 #sql query to insert the values
-$sql2 = "INSERT INTO vertices_geodesicos (latitud,tipo_altura) VALUES ('$latitud', '$tipo_altura')";
+$sql2 = "INSERT INTO Shoa (rut_empresa,director,subdirector,departamento) VALUES ('$rut_empresa','$director','$subdirector','$departamento')";
 
 #Insert sql query
 $result = pg_query($conn, $sql);
