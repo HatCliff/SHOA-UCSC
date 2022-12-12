@@ -8,6 +8,7 @@ if (!$conn) {
     echo "An error occurred.\n";
     exit;
 }
+
 #Obtenemos los valores del formulario que deseamos insertar
 #Por ejemplo:
 #Obtenemos el valor del campo nombre

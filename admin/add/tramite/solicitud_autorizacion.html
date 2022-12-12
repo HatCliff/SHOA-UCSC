@@ -1,30 +1,10 @@
-#I need a html5 page that can be use to add a new solicitud_autorizacion to the database
-#The page should have a form with the following fields:
-    #rut_empresa
-    #correo_electronico
-    #contraseña
-    #nombre
-    #telefono
-    #direccion
-
-    #rut_representante_solicitud
-    #nombre_representante_solicitud
-    #empresa_institucion
-    #razon_social
-    #actividad_giro
-    #nacionalidad
-    #tipo_autoriacion
-#And the form must be organized in a table
-#The page should have a submit button that will submit the form to the following URL:
-    #http://localhost/admin/add/tramite/solicitud_autorizacion-add.php
-
 <!doctype html>
 <html>
 <head>
     <title>solicitud_autorizacion</title>
 </head>
     <body>
-        <form action="http://localhost/admin/add/tramite/solicitud_autorizacion-add.php" method="post">
+        <form action="./solicitud_autorizacionadd.php" method="post">
             <table>
                 <tr>
                     <td>rut_empresa</td>

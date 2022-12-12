@@ -1,10 +1,3 @@
-#I need a html5 page that can be use to add a new vertices geodesicos to the database
-#The page should have a form with the following fields:
-    #latitud
-    #tipo_altura
-#And the form must be organized in a table
-#The page should have a submit button that will submit the form to the following URL:
-    #http://localhost/admin/add/producto/planos-costeros-add.php
 <!doctype html>
 <html>
 <head>
@@ -12,7 +5,7 @@
 </head>
 <body>
     <p>
-        <form action="http://localhost/admin/add/producto/vertices-geodesicos-add.php" method="post">
+        <form action="./vertices_geodesicosadd.php" method="post">
             <table>
                 <tr>
                     <td>rut_empresa</td>
@@ -29,9 +22,6 @@
                 <tr>
                     <td>descripcion</td>
                     <td><input type="text" name="descripcion"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Submit"></td>
                 </tr>
                 <tr>
                     <td>latitud</td>

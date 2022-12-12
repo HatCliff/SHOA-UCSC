@@ -14,7 +14,6 @@ $rut_empresa = $_POST['rut_empresa'];
 $correo_electronico = $_POST['correo_electronico'];
 $contraseña = $_POST['contraseña'];
 $nombre = $_POST['nombre'];
-$contraseña = $_POST['contraseña'];
 $telefono = $_POST['telefono'];
 $direccion = $_POST['direccion'];
 
@@ -29,7 +28,6 @@ $detalle_datos = $_POST['detalle_datos'];
 #sql query to insert the values on product
 $sql = "INSERT INTO Tramite (id_tramite, rut_empresa, correo_eletronico, contraseña, nombre, telefono, direccion)
         VALUES (1 ,'$rut_empresa', '$correo_electronico', '$contraseña', '$nombre', '$telefono', '$direccion')";
-       
 $sql2 = "INSERT INTO solicitud_datos (RUT_empresa, tipo_datos, intencion_uso, organizacion, nombre_solicitante, detalle_datos)
         VALUES (1 ,'$tipo_datos', '$intencion_uso', '$organizacion', '$nombre_solicitante', '$detalle_datos')";
 #Insert sql query

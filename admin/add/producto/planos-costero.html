@@ -1,11 +1,3 @@
-#I need a html5 page that can be use to add a new planos borde costero to the database
-#The page should have a form with the following fields:
-    #region
-    #a select with product_id retrieved from database
-#And the form must be organized in a table
-#The page should have a submit button that will submit the form to the following URL:
-    #http://localhost/admin/add/producto/planos-costeros-add.php
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +5,7 @@
 </head>
 <body>
     <p>
-        <form action="http://localhost/admin/add/producto/planos-costeros-add.php" method="post">
+        <form action="./planos_costeroadd.php" method="post">
             <table>
                 <tr>
                     <td>rut_empresa</td>
@@ -32,13 +24,9 @@
                     <td><input type="text" name="descripcion"></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Submit"></td>
-                </tr>
-                <tr>
                     <td>region</td>
                     <td><input type="text" name="region"></td>
                 </tr>
-
                 <tr>
                     <td><input type="submit" value="Submit"></td>
                 </tr>
