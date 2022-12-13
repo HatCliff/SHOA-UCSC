@@ -19,16 +19,11 @@ $descripcion = $_POST['descripcion'];
 $mes = $_POST['mes'];
 $anio = $_POST['anio'];
 
-#sql query to insert the values on product
-$sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
-        VALUES (1 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
-
 
 #sql query to insert the values
-$sql2 = "INSERT INTO boletin (mes, anio) VALUES ('$mes', '$anio')";
+$sql2 = "INSERT INTO boletin (mes, año) VALUES ('$mes', '$anio')";
 
 #Insert sql query
-$result = pg_query($conn, $sql);
 $result2 = pg_query($conn, $sql2);
 
 
