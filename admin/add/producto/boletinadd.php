@@ -28,3 +28,4 @@ $result2 = pg_query($conn, $sql2);
 
 
 ?>
+?>

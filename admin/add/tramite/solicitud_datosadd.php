@@ -14,7 +14,6 @@ $rut_empresa = $_POST['rut_empresa'];
 $correo_electronico = $_POST['correo_electronico'];
 $contraseña = $_POST['contraseña'];
 $nombre = $_POST['nombre'];
-$contraseña = $_POST['contraseña'];
 $telefono = $_POST['telefono'];
 $direccion = $_POST['direccion'];
 

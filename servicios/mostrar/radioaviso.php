@@ -11,7 +11,7 @@ if (!$conn) {
 
 #Retrieve values from DB and print them on the table
 #Query to retrieve the values
-$sql = "SELECT * FROM luz_obscuridad";
+$sql = "SELECT * FROM radioaviso";
 $result = pg_query($conn, $sql);
 #Check if the query was successful
 if (!$result) {
@@ -22,17 +22,11 @@ if (!$result) {
 #Print the values on the table with a foreach
 foreach(pg_fetch_all($result) as $row) {
     echo "<tr>";
-    echo "<td>".$row['id_luz_obscuridad']."</td>";
-    echo "<td>".$row['fecha']."</td>";
-    echo "<td>".$row['hora']."</td>";
-    echo "<td>".$row['orto_luna']."</td>";
-    echo "<td>".$row['ocaso_luna']."</td>";
-    echo "<td>".$row['orto_sol']."</td>";
-    echo "<td>".$row['ocaso_sol']."</td>";
-    echo "<td>".$row['aurora_civil']."</td>";
-    echo "<td>".$row['aurora_nautica']."</td>";
-    echo "<td>".$row['crepusculo_civil']."</td>";
-    echo "<td>".$row['crepusculo_nautico']."</td>";
+    echo "<td>".$row['ciudad']."</td>";
+    echo "<td>".$row['descripcion']."</td>";
+    echo "<td>".$row['coordenadas']."</td>";
+    echo "<td>".$row['nurnav_codigo']."</td>";
+    echo "<td>".$row['sistema_aviso']."</td>";
     echo "</tr>";
 }
 ?>
