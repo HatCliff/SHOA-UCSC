@@ -22,11 +22,9 @@ if (!$result) {
 #Print the values on the table with a foreach
 foreach(pg_fetch_all($result) as $row) {
     echo "<tr>";
-    echo "<td>".$row['id_luz_obscuridad']."</td>";
-    echo "<td>".$row['hora']."</td>";
-    echo "<td>".$row['fecha']."</td>";
-    echo "<td>".$row['descripcion']."</td>";
-    echo "<td>".$row['referencia_geografica']."</td>";
+    echo "<td>".$row['id_marea']."</td>";
+    echo "<td>".$row['altura']."</td>";
+    echo "<td>".$row['nombre_puerto']."</td>";
     echo "</tr>";
 }
 ?>
