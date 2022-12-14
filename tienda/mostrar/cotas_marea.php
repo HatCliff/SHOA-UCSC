@@ -18,16 +18,23 @@ if (!$result) {
     echo "An error occurred.\n";
     exit;
 }
-#Print the values on the table with a foreach
+echo "<style> table, th, td { padding:5px; } 
+        table,tr{ border: 1px solid black; border-collapse: collapse; }}
+</style>";
+echo"<table>";
+echo "<tr>";
+echo "<td>Latitud</td>";
+echo "<td>Region</td>";
+echo "</tr> <br>";
 foreach(pg_fetch_all($result) as $row) {
+    
+    
     echo "<tr>";
-    echo "<td>".$row['rut_empresa']."</td>";
-    echo "<td>".$row['nombre']."</td>";
-    echo "<td>".$row['precio']."</td>";
-    echo "<td>".$row['descripcion']."</td>";
-    echo "<td>".$row['latitud']."</td>";
-    echo "<td>".$row['region']."</td>";
-    echo "</tr>";
+    echo "<td>".$row['Latitud']."</td>";
+    echo "<td>".$row['Region']."</td>";
+    echo "</tr> <br>";
 }
+echo "</table>";
 ?>
+
 

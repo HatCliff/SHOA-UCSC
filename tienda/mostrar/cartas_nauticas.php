@@ -37,7 +37,7 @@ echo "<td>Edicion</td>";
 echo "<td>Datum</td>";
 echo "<td>Region</td>";
 echo "</tr> <br>";
-foreach(pg_fetch_all($result) as $row) {
+foreach(pg_fetch_all($result) as $row) {        #<<---- Here is the problem
     
     
     echo "<tr>";
