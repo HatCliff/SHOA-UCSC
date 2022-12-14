@@ -21,36 +21,31 @@ if (!$result) {
 $sql2 = "SELECT * FROM producto";
 $result2 = pg_query($conn, $sql2);
 #Check if the query was successful
-if (!$result) {
+if (!$result2) {
     echo "An error occurred.\n";
     exit;
 }
-foreach(pg_fetch_all($result2) as $row) {
-    echo "<tr>";
-    echo "<td>".$row['rut_empresa']."<br></td>";
-    echo "<td>".$row['precio']."<br></td>";
-    echo "<td>".$row['descripcion']."<br></td>";
-    echo "<td>".$row['titulo']."<br></td>";
-    echo "<td>".$row['tipo_carta']."<br></td>";
-    echo "<td>".$row['escala']."<br></td>";
-    echo "<td>".$row['edicion']."<br></td>";
-    echo "<td>".$row['datum']."<br></td>";
-    echo "<td>".$row['region']."<br></td>";
-    echo "</tr>";
-}
-#Print the values on the table with a foreach
+echo "<style> table, th, td { border: 1px solid black; padding:5px; } </style>";
+echo"<table>";
 foreach(pg_fetch_all($result) as $row) {
+    
     echo "<tr>";
-    echo "<td>".$row['nombre']."</td>";
-    echo "<td>".$row['precio']."</td>";
-    echo "<td>".$row['descripcion']."</td>";
+    echo "<td>Titulo</td>";
+    echo "<td>Tipo carta</td>";
+    echo "<td>Escala</td>";
+    echo "<td>Edicion</td>";
+    echo "<td>Datum</td>";
+    echo "<td>Region</td>";
+    echo "</tr> <br>";
+    echo "<tr>";
     echo "<td>".$row['titulo']."</td>";
     echo "<td>".$row['tipo_carta']."</td>";
     echo "<td>".$row['escala']."</td>";
     echo "<td>".$row['edicion']."</td>";
     echo "<td>".$row['datum']."</td>";
     echo "<td>".$row['region']."</td>";
-    echo "</tr>";
+    echo "</tr> <br>";
 }
+echo "</table>";
 ?>
 
