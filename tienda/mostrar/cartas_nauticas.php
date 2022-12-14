@@ -26,7 +26,7 @@ if (!$result2) {
     exit;
 }
 echo "<style> table, th, td { padding:5px; } 
-        table,tr{ border: 1px solid black; border-collapse: collapse; }
+        table,tr{ border: 1px solid black; border-collapse: collapse; }}
 </style>";
 echo"<table>";
 echo "<tr>";
