@@ -24,12 +24,13 @@ $datum = $_POST['datum'];
 $region = $_POST['region'];
 
 #sql query to insert the values on product
-$sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
-        VALUES (1 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
+$sql = "INSERT INTO producto (rut_empresa, nombre, precio, descripcion) 
+        VALUES ('$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
 
 
 #sql query to insert the values
-$sql2 = "INSERT INTO cartas_nauticas (titulo,tipo_carta,escala,edicion,datum,region) VALUES ('$titulo', '$tipo_carta', '$escala', '$edicion', '$datum', '$region')";
+$sql2 = "INSERT INTO cartas_nauticas (id_producto,titulo,tipo_carta,escala,edicion,datum,region) 
+        VALUES ('2','$titulo', '$tipo_carta', '$escala', '$edicion', '$datum', '$region')";
 
 #Insert sql query
 $result = pg_query($conn, $sql);

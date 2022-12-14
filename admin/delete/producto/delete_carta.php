@@ -21,6 +21,12 @@ $region = $_POST['region'];
 #sql query to delete the values from form
 $sql4 = "DELETE FROM cartas_nauticas WHERE titulo = '$titulo' AND tipo_carta = '$tipo_carta' AND escala = '$escala' AND edicion = '$edicion' AND datum = '$datum' AND region = '$region'";
 $result4 = pg_query($conn, $sql4);
-
+#if the query was successful
+if ($result4) {
+    echo "Se ha eliminado correctamente";
+    header("Location: ../../../../admin.php");
+} else {
+    echo "Ha ocurrido un error";
+}
 
 ?>
