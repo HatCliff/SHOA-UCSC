@@ -19,16 +19,24 @@ $descripcion = $_POST['descripcion'];
 $region = $_POST['region'];
 
 #sql query to insert the values on product
-$sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
-        VALUES (1 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
+$sql = "INSERT INTO producto (rut_empresa, nombre, precio, descripcion) 
+        VALUES ('$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
 
 
 #sql query to insert the values
-$sql2 = "INSERT INTO planos_costero (region) VALUES ('$region'')";
+$sql2 = "INSERT INTO planos_borde_costero (id_producto,region) VALUES (4,'$region')";
 
 #Insert sql query
-$result = pg_query($conn, $sql);
-$result2 = pg_query($conn, $sql2);
-
-
+#
+if (pg_query($conn, $sql)) {
+    echo "New record in Producto created successfully";
+    if(pg_query($conn, $sql2)){
+        echo "New record in Planos_borde_costero created successfully";
+    }
+    else{
+        echo "Error: " . $sql . "<br>" . pg_last_error($conn);
+    }
+} else {
+    echo "Error: " . $sql . "<br>" . pg_last_error($conn);
+}
 ?>

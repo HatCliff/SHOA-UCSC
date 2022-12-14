@@ -21,7 +21,7 @@ $anio = $_POST['anio'];
 
 
 #sql query to insert the values
-$sql2 = "INSERT INTO boletin (mes, año) VALUES ('$mes', '$anio')";
+$sql2 = "INSERT INTO boletin (id_producto,mes, año) VALUES ('1','$mes', '$anio')";
 
 #Insert sql query
 $result2 = pg_query($conn, $sql2);

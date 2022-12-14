@@ -20,12 +20,12 @@ $latitud = $_POST['latitud'];
 $region = $_POST['region'];
 
 #sql query to insert the values on product
-$sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
-        VALUES (3 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
+$sql = "INSERT INTO producto (rut_empresa, nombre, precio, descripcion) 
+        VALUES ('$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
 
 
 #sql query to insert the values
-$sql2 = "INSERT INTO cotas_marea (latitud,region) VALUES ('$latitud', '$region')";
+$sql2 = "INSERT INTO cotas_marea (id_producto,latitud,region) VALUES (3,'$latitud', '$region')";
 
 #Insert sql query
 $result = pg_query($conn, $sql);

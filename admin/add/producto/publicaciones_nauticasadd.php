@@ -30,5 +30,4 @@ $sql2 = "INSERT INTO publicaciones_nauticas (edicion) VALUES ('$edicion')";
 $result = pg_query($conn, $sql);
 $result2 = pg_query($conn, $sql2);
 
-
 ?>
