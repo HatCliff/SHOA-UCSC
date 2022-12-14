@@ -21,7 +21,7 @@ $region = $_POST['region'];
 
 #sql query to insert the values on product
 $sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
-        VALUES (1 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
+        VALUES (3 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
 
 
 #sql query to insert the values

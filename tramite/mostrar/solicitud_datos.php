@@ -18,21 +18,33 @@ if (!$result) {
     echo "An error occurred.\n";
     exit;
 }
+echo "<style> table, th, td { padding:5px; } 
+        table,tr{ border: 1px solid black; border-collapse: collapse; }}
+</style>";
+echo"<table>";
+echo "<tr>";
+echo "<td>Num Solicitud</td>";
+echo "<td>Id Trámite</td>";
+echo "<td>Nombre Solicitante</td>";
+echo "<td>Tipo datos</td>";
+echo "<td>Intencion Uso</td>";
+echo "<td>Organizacion</td>";
+echo "<td>Actividad Giro</td>";
+echo "<td>Detalle datos</td>";
+echo "</tr> <br>";
 #Print the values on the table with a foreach
 foreach(pg_fetch_all($result) as $row) {
-    echo "<tr>";
-    echo "<td>".$row['rut_empresa']."</td>";
-    echo "<td>".$row['correo_electronico']."</td>";
-    echo "<td>".$row['contraseña']."</td>";
-    echo "<td>" . $row['nombre'] . "</td>";
-    echo "<td>" . $row['telefono'] . "</td>";
-    echo "<td>" . $row['direccion'] . "</td>";
-    echo "<td>" . $row['tipo_datos'] . "</td>";
-    echo "<td>" . $row['intencion_uso'] . "</td>";
-    echo "<td>" . $row['organizacion'] . "</td>";
-    echo "<td>" . $row['nombre_solicitante'] . "</td>";
-    echo "<td>" . $row['detalle_datos'] . "</td>";
-    echo "</tr>";
+        echo "<tr>";
+        echo "<td>".$row['num_solicitud']."</td>";
+        echo "<td>".$row['id_tramite']."</td>";
+        echo "<td>".$row['nombre_solicitante']."</td>";
+        echo "<td>".$row['tipo_datos']."</td>";
+        echo "<td>".$row['intencion_uso']."</td>";
+        echo "<td>".$row['organizacion']."</td>";
+        echo "<td>".$row['actividad_giro']."</td>";
+        echo "<td>".$row['detalle_datos']."</td>";
+        echo "</tr> <br>";
 }
+echo "</table>";
 ?>
 
