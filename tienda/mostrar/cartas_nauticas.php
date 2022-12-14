@@ -25,18 +25,21 @@ if (!$result2) {
     echo "An error occurred.\n";
     exit;
 }
-echo "<style> table, th, td { border: 1px solid black; padding:5px; } </style>";
+echo "<style> table, th, td { padding:5px; } 
+        table,tr{ border: 1px solid black; border-collapse: collapse; }
+</style>";
 echo"<table>";
+echo "<tr>";
+echo "<td>Titulo</td>";
+echo "<td>Tipo carta</td>";
+echo "<td>Escala</td>";
+echo "<td>Edicion</td>";
+echo "<td>Datum</td>";
+echo "<td>Region</td>";
+echo "</tr> <br>";
 foreach(pg_fetch_all($result) as $row) {
     
-    echo "<tr>";
-    echo "<td>Titulo</td>";
-    echo "<td>Tipo carta</td>";
-    echo "<td>Escala</td>";
-    echo "<td>Edicion</td>";
-    echo "<td>Datum</td>";
-    echo "<td>Region</td>";
-    echo "</tr> <br>";
+    
     echo "<tr>";
     echo "<td>".$row['titulo']."</td>";
     echo "<td>".$row['tipo_carta']."</td>";
