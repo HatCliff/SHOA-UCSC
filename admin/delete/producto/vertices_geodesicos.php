@@ -32,7 +32,7 @@ if (!$result) {
                         <?php
                             foreach(pg_fetch_all($result) as $row) {
                     
-                                echo "<option value=".$row['sku_vertice'].">" . $row['id_vertice'] . "</option>";
+                                echo "<option value=".$row['id_vertice'].">" . $row['id_vertice'] . "</option>";
 
                             }
                             
@@ -53,6 +53,6 @@ if (!$result) {
                 </tr>
             </table>
         </form>
-    </p>s
+    </p>
 </body>
 </html>

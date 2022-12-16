@@ -11,7 +11,7 @@ if (!$conn) {
 #Get the values from the form boletin.html
 
 #Vertices Geodesicos
-$id = $_POST['id'];
+$id = $_POST['id_vertice'];
 $latitud = $_POST['latitud'];
 $tipo_altura = $_POST['tipo_altura'];
 
