@@ -1,6 +1,6 @@
 <?php
 #Include conn.php file 
-include("../../../key/conn.php");
+include("./../../key/conn.php");
 #Create a connection to postgresql 
 $conn = pg_connect("host=$host dbname=$database user=$user password=$password");
 #Check if the connection is successful
@@ -29,19 +29,17 @@ echo "<td>Nombre Solicitante</td>";
 echo "<td>Tipo datos</td>";
 echo "<td>Intencion Uso</td>";
 echo "<td>Organizacion</td>";
-echo "<td>Actividad Giro</td>";
 echo "<td>Detalle datos</td>";
 echo "</tr> <br>";
 #Print the values on the table with a foreach
 foreach(pg_fetch_all($result) as $row) {
         echo "<tr>";
-        echo "<td>".$row['num_solicitud']."</td>";
+        echo "<td>".$row['id_solicitud']."</td>";
         echo "<td>".$row['id_tramite']."</td>";
         echo "<td>".$row['nombre_solicitante']."</td>";
         echo "<td>".$row['tipo_datos']."</td>";
         echo "<td>".$row['intencion_uso']."</td>";
         echo "<td>".$row['organizacion']."</td>";
-        echo "<td>".$row['actividad_giro']."</td>";
         echo "<td>".$row['detalle_datos']."</td>";
         echo "</tr> <br>";
 }

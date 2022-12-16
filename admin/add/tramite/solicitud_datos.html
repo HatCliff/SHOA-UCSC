@@ -1,53 +1,59 @@
 <!doctype html>
 <html>
 <head>
-    <title>solicitud_datos</title>
+    <title>Solicitud Datos</title>
 </head>
 <body>
     <form action="./solicitud_datosadd.php" method="post">
         <table>
             <tr>
-                <td>rut_empresa</td>
+                <td>Rut Empresa</td>
                 <td><input type="text" name="rut_empresa"></td>
             </tr>
             <tr>
-                <td>correo_electronico</td>
+                <td>Correo electronico</td>
                 <td><input type="text" name="correo_electronico"></td>
             </tr>
             <tr>
-                <td>contraseña</td>
-                <td><input type="text" name="contraseña"></td>
+                <td>Contraseña</td>
+                <td><input type="password" name="contraseña"></td>
             </tr>
             <tr>
-                <td>nombre</td>
+                <td>Nombre</td>
                 <td><input type="text" name="nombre"></td>
             </tr>
             <tr>
-                <td>telefono</td>
+                <td>Telefono</td>
                 <td><input type="text" name="telefono"></td>
             </tr>
             <tr>
-                <td>direccion</td>
+                <td>Direccion</td>
                 <td><input type="text" name="direccion"></td>
             </tr>
             <tr>
-                <td>tipo_datos</td>
-                <td><input type="text" name="tipo_datos"></td>
+                <td>Tipo Datos</td>
+                <td>
+                    <select name="tipo_datos">
+                        <option value="FinesCientificos/Academicos">Para Fines Cientificos/Academicos</option>
+                        <option value="EstudiosAmbientalesConFinesDeLucro">Para Estudios Ambientales con Fines de Lucro</option>
+                    </select>
+
+                </td>
             </tr>
             <tr>
-                <td>intencion_uso</td>
+                <td>Intencion uso</td>
                 <td><input type="text" name="intencion_uso"></td>
             </tr>
             <tr>
-                <td>organizacion</td>
+                <td>Organizacion</td>
                 <td><input type="text" name="organizacion"></td>
             </tr>
             <tr>
-                <td>nombre_solicitante</td>
+                <td>Nombre solicitante</td>
                 <td><input type="text" name="nombre_solicitante"></td>
             </tr>
             <tr>
-                <td>detalle_datos</td>
+                <td>Detalle datos</td>
                 <td><input type="text" name="detalle_datos"></td>
             </tr>
             <tr>

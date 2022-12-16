@@ -5,8 +5,8 @@ include("../../../key/conn.php");
 $conn = pg_connect("host=$host dbname=$database user=$user password=$password");
 #Comprobamos si la conexión es exitosa
 if (!$conn) {
-    echo "An error occurred.\n";
-    exit;
+        echo "An error occurred.\n";
+        exit;
 }
 
 #Tramite
@@ -26,13 +26,34 @@ $nombre_solicitante = $_POST['nombre_solicitante'];
 $detalle_datos = $_POST['detalle_datos'];
 
 #sql query to insert the values on product
-$sql = "INSERT INTO Tramite (id_tramite, rut_empresa, correo_eletronico, contraseña, nombre, telefono, direccion)
-        VALUES (1 ,'$rut_empresa', '$correo_electronico', '$contraseña', '$nombre', '$telefono', '$direccion')";
-$sql2 = "INSERT INTO solicitud_datos (RUT_empresa, tipo_datos, intencion_uso, organizacion, nombre_solicitante, detalle_datos)
-        VALUES (1 ,'$tipo_datos', '$intencion_uso', '$organizacion', '$nombre_solicitante', '$detalle_datos')";
+$sql = "INSERT INTO Tramite (rut_empresa, correo_electronico, contraseña, nombre, telefono, direccion)
+        VALUES ('$rut_empresa', '$correo_electronico', '$contraseña', '$nombre', '$telefono', '$direccion')";
+
 #Insert sql query
 $result = pg_query($conn, $sql);
+
+
+#Get id_tramite from tramite SQL
+$id_tramiteSQL = "SELECT max(id_tramite) FROM tramite"; 
+$result = pg_query($conn, $id_tramiteSQL);
+$id_tramite = pg_fetch_result($result, 0, 0);
+
+
+
+
+$sql2 = "INSERT INTO solicitud_datos (id_tramite, tipo_datos, intencion_uso, organizacion, nombre_solicitante, detalle_datos)
+        VALUES ('$id_tramite' ,'$tipo_datos', '$intencion_uso', '$organizacion', '$nombre_solicitante', '$detalle_datos')";
+
+
 $result2 = pg_query($conn, $sql2);
+
+#Print if the query was successful or not
+if (!$result) {
+        echo "An error occurred.\n";
+        exit;
+} else {
+        echo "Datos ingresados correctamente";
+}
 
 
 ?>
