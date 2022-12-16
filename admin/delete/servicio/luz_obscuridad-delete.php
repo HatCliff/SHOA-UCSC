@@ -9,6 +9,7 @@ if (!$conn) {
 }
 
 #get values from form luz_obscuridad.html
+$id_luz_obs = $_POST['id_luz_obs'];
 $fecha = $_POST['fecha'];
 $hora = $_POST['hora'];
 $orto_luna = $_POST['orto_luna'];
@@ -24,28 +25,30 @@ $crepusculo_nautico = $_POST['crepusculo_nautico'];
 #sql query to delete the values from form
 $sql = "DELETE FROM luz_obscuridad WHERE fecha = '$fecha' 
 AND hora = '$hora'";
-$sql2 = "DELETE FROM luna WHERE orto_luna = '$orto_luna' 
+$sql2 = "DELETE FROM luna WHERE  id_luz_obs='$id_luz_obs' AND orto_luna = '$orto_luna' 
 AND ocaso_luna = '$ocaso_luna'";
 $sql3 = "DELETE FROM sol WHERE orto_sol = '$orto_sol'
 AND ocaso_sol = '$ocaso_sol' AND aurora_civil = '$aurora_civil' 
 AND aurora_nautica = '$aurora_nautica' AND crepusculo_civil = '$crepusculo_civil' 
 AND crepusculo_nautico = '$crepusculo_nautico'";
+$result = pg_query($conn, $sql);
 $result2 = pg_query($conn, $sql2);
 $result3 = pg_query($conn, $sql3);
-$result = pg_query($conn, $sql);
-if ($result) {
-    echo "Se ha eliminado correctamente el registro desde luz_obscuridad </br>";
-} else {
-    echo "Ha ocurrido un error en luz_obscuridad";
-}
+
 if ($result2) {
-    echo "Se ha eliminado correctamente el registro desde luna </br>";
+    echo "Se ha eliminado correctamente el registro desde luna <br>";
 } else {
-    echo "Ha ocurrido un error en luna";
+    echo "Ha ocurrido un error en luna<br>";
 }
 if ($result3) {
-    echo "Se ha eliminado correctamente el registro desde sol </br>";
+    echo "Se ha eliminado correctamente el registro desde sol <br>";
 } else {
-    echo "Ha ocurrido un error en sol";
+    echo "Ha ocurrido un error en sol<br>";
 }
+if ($result) {
+    echo "Se ha eliminado correctamente el registro desde luz_obscuridad <br>";
+} else {
+    echo "Ha ocurrido un error en luz_obscuridad<br>";
+}
+
 ?>

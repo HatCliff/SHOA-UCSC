@@ -16,7 +16,7 @@ $tipo_carta = $_POST['tipo_carta'];
 $escala = $_POST['escala'];
 $edicion = $_POST['edicion'];
 $datum = $_POST['datum'];
-$region = $_POST['region'];}
+$region = $_POST['region'];
 
 $nuevo_titulo = $_POST['nuevo_titulo'];
 $nuevo_tipo_carta = $_POST['nuevo_tipo_carta'];
