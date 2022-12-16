@@ -16,7 +16,8 @@ $profundidad = $_POST['profundidad'];
 $estado = $_POST['estado'];
 
 #sql query to insert the values
-$sql2 = "INSERT INTO boya (id_servicio,sensor, modelo, profundidad, estado) VALUES ('1','$sensor', '$modelo', '$profundidad', '$estado')";
+$sql2 = "INSERT INTO boya (id_servicio,sensor, modelo, profundidad, estado)
+VALUES ('1','$sensor', '$modelo', '$profundidad', '$estado')";
 
 $result2 = pg_query($conn, $sql2);
 

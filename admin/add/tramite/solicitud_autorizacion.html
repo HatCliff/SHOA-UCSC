@@ -16,7 +16,7 @@
                 </tr>
                 <tr>
                     <td>contraseña</td>
-                    <td><input type="text" name="contraseña"></td>
+                    <td><input type="password" name="contraseña"></td>
                 </tr>
                 <tr>
                     <td>nombre</td>
@@ -56,7 +56,16 @@
                 </tr>
                 <tr>
                     <td>tipo_autoriacion</td>
-                    <td><input type="text" name="tipo_autoriacion"></td>
+                    <td>
+                        <select name="tipo_autorizacion">
+                            <option value="InvestigacionCientifica_TecnologicaMarinaEntidadNacional">Inv. Cientifica/Tecnologica Marina por entidad Nacional</option>
+                            <option value="InvestigacionCientificaMarinaNavesEntidadExtranjera">Inv. Cientifica Marina por Naves/Entidad Extranjera</option>
+                            <option value="EstudiosValorOceanografico">Estudios con Valor Oceanográfico</option>
+                            <option value="BatimetriaValorHidrografico">Batimetria con Valor Hidrográfico</option>
+                            <option value="ProyectoPlanosMaritimosBordeCostero">Proyectos de Planos Maritimos del Borde Costero</option>
+                        </select>
+
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="submit"

@@ -11,7 +11,8 @@ if (!$conn) {
 $altura = $_POST['altura'];
 $nombre_puerto = $_POST['nombre_puerto'];
 
-$sql = "INSERT INTO marea (altura, nombre_puerto) VALUES ('$altura', '$nombre_puerto')";
-$result = pg_query($conn, $sql2);
+$sql = "INSERT INTO marea (id_servicio,altura, nombre_puerto)
+VALUES (3,'$altura', '$nombre_puerto')";
+$result = pg_query($conn, $sql);
 
 ?>

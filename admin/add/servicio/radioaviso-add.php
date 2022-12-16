@@ -16,8 +16,15 @@ $nurnav_codigo = $_POST['nurnav_codigo'];
 $sistema_aviso = $_POST['sistema_aviso'];
 
 #insert information of the radioaviso
-$sql2 = "INSERT INTO radioaviso (ciudad, descripcion, coordenadas, nurnav_codigo, sistema_aviso) VALUES ('$ciudad', '$descripcion', '$coordenadas', '$nurnav_codigo', '$sistema_aviso')";
+$sql2 = "INSERT INTO radioaviso (id_servicio,ciudad, descripcion, coordenada, nurnav_codigo, sistema_avisos) 
+VALUES ('4','$ciudad', '$descripcion', '$coordenadas', '$nurnav_codigo', '$sistema_aviso')";
 $result2 = pg_query($conn, $sql2);
+
+#Check if the query was successful
+if (!$result2) {
+    echo "An error occurred.\n";
+    exit;
+}
 
 
 ?>

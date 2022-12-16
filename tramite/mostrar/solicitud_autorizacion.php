@@ -1,6 +1,6 @@
 <?php
 #Include conn.php file 
-include("../../../key/conn.php");
+include("./../../key/conn.php");
 #Create a connection to postgresql 
 $conn = pg_connect("host=$host dbname=$database user=$user password=$password");
 #Check if the connection is successful
@@ -13,7 +13,7 @@ if (!$conn) {
 #Query to retrieve the values
 $sql = "SELECT * FROM solicitud_autorizacion";
 $result = pg_query($conn, $sql);
-$result2 = pg_query($conn, $sql2);
+
 #Check if the query was successful
 if (!$result) {
     echo "An error occurred.\n";
@@ -28,6 +28,7 @@ echo "<tr>";
 echo "<td>Id Trámite</td>";
 echo "<td>Rut Empresa</td>";
 echo "<td>Rut Representante</td>";
+echo "<td>Nombre Representante</td>";
 echo "<td>Institucion</td>";
 echo "<td>Razón Social</td>";
 echo "<td>Actividad Giro</td>";
@@ -37,9 +38,10 @@ echo "</tr> <br>";
 foreach(pg_fetch_all($result) as $row) {      
         echo "<tr>";
         echo "<td>".$row['id_tramite']."</td>";
-        echo "<td>".$row['rut_empresa']."</td>";
-        echo "<td>".$row['rut_representante']."</td>";
-        echo "<td>".$row['institucion']."</td>";
+        echo "<td>".$row['rut_emp_solicitud']."</td>";
+        echo "<td>".$row['rut_representante_sol']."</td>";
+        echo "<td>".$row['nombre_rep']."</td>";
+        echo "<td>".$row['empresa_institucion']."</td>";
         echo "<td>".$row['razon_social']."</td>";
         echo "<td>".$row['actividad_giro']."</td>";
         echo "<td>".$row['nacionalidad']."</td>";
