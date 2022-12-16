@@ -19,12 +19,12 @@ $descripcion = $_POST['descripcion'];
 $edicion = $_POST['edicion'];
 
 #sql query to insert the values on product
-$sql = "INSERT INTO producto (id_producto , rut_empresa, nombre, precio, descripcion) 
-        VALUES (1 ,'$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
+$sql = "INSERT INTO producto (rut_empresa, nombre, precio, descripcion) 
+        VALUES ('$rut_empresa', '$nombre_empresa', '$precio', '$descripcion')";
 
 
 #sql query to insert the values
-$sql2 = "INSERT INTO publicaciones_nauticas (edicion) VALUES ('$edicion')";
+$sql2 = "INSERT INTO publicaciones_nauticas (id_producto,edicion) VALUES ('5','$edicion')";
 
 #Insert sql query
 $result = pg_query($conn, $sql);

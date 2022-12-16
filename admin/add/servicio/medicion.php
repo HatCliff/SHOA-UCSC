@@ -1,21 +1,19 @@
-#I need a HTML5 webpage that can used to submit measurements of boya to the database
-#The page should have a form with the following fields:
-    #fecha
-    #hora
-    #velocidad_viento
-    #velocidad_maxima_viento
-    #direccion_viento
-    #altura_significativa
-    #altura_maxima
-    #direccion_maxima
-    #temperatura_aire
-    #coordenadas
-    #direccion_media
-    #periodo_peak
-    #temperatura_agua
-    #humedad_relativa
-#And a option tag that displays a list of boyas stored in the database
+
 <?php
+include("./../../key/conn.php");
+$conn = pg_connect("host=$host dbname=$database user=$user password=$password");
+#Check if the connection is successful
+if (!$conn) {
+    echo "An error occurred.\n";
+    exit;
+}
+$sql = "SELECT * FROM boya";
+$result = pg_query($conn, $sql);
+#Check if the query was successful
+if (!$result) {
+    echo "An error occurred.\n";
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,42 +21,87 @@
         <title>Medicion</title>
     </head>
     <body>
-        <form action="medicion.php" method="post">
-            <label for="fecha">Fecha</label>
-            <input type="date" name="fecha" id="fecha">
-            <label for="hora">Hora</label>
-            <input type="time" name="hora" id="hora">
-            <label for="velocidad_viento">Velocidad del viento</label>
-            <input type="number" name="velocidad_viento" id="velocidad_viento">
-            <label for="velocidad_maxima_viento">Velocidad maxima del viento</label>
-            <input type="number" name="velocidad_maxima_viento" id="velocidad_maxima_viento">
-            <label for="direccion_viento">Direccion del viento</label>
-            <input type="number" name="direccion_viento" id="direccion_viento">
-            <label for="altura_significativa">Altura significativa</label>
-            <input type="number" name="altura_significativa" id="altura_significativa">
-            <label for="altura_maxima">Altura maxima</label>
-            <input type="number" name="altura_maxima" id="altura_maxima">
-            <label for="direccion_maxima">Direccion maxima</label>
-            <input type="number" name="direccion_maxima" id="direccion_maxima">
-            <label for="temperatura_aire">Temperatura del aire</label>
-            <input type="number" name="temperatura_aire" id="temperatura_aire">
-            <label for="coordenadas">Coordenadas</label>
-            <input type="text" name="coordenadas" id="coordenadas">
-            <label for="direccion_media">Direccion media</label>
-            <input type="number" name="direccion_media" id="direccion_media">
-            <label for="periodo_peak">Periodo peak</label>
-            <input type="number" name="periodo_peak" id="periodo_peak">
-            <label for="temperatura_agua">Temperatura del agua</label>
-            <input type="number" name="temperatura_agua" id="temperatura_agua">
-            <label for="humedad_relativa">Humedad relativa</label>
-            <input type="number" name="humedad_relativa" id="humedad_relativa">
-            <label for="boya">Boya</label>
-            <!-- AQUI VA RESULTADO DE CONSULTA A BASE DE DATOS -->
-            <select name="boya" id="boya">
-                <option value="1">Boya 1</option>
-                <option value="2">Boya 2</option>
-                <option value="3">Boya 3</option>
-            </select>
-            <input type="submit" value="Enviar">
+        <form action="./medicionadd.php" method="post">
+            <!-------Now the same form as above in a table but ordened up to down------->
+            <table>
+                <tr>
+                    <td>Fecha</td>
+                    <td><input type="date" name="fecha" id="fecha"></td>
+                </tr>
+                <tr>
+                    <td>Hora</td>
+                    <td><input type="time" name="hora" id="hora"></td>
+                </tr>
+                <tr>
+                    <td>Velocidad del viento</td>
+                    <td><input type="number" step="any" name="velocidad_viento" id="velocidad_viento"></td>
+                </tr>
+                <tr>
+                    <td>Velocidad maxima del viento</td>
+                    <td><input type="number"  step="any"  name="velocidad_maxima_viento" id="velocidad_maxima_viento"></td>
+                </tr>
+                <tr>
+                    <td>Direccion del viento</td>
+                    <td><input type="text" name="direccion_viento" id="direccion_viento"></td>
+                </tr>
+                <tr>
+                    <td>Altura significativa</td>
+                    <td><input type="number" step="any"  name="altura_significativa" id="altura_significativa"></td>
+                </tr>
+                <tr>
+                    <td>Altura maxima</td>
+                    <td><input type="number" step="any"  name="altura_maxima" id="altura_maxima"></td>
+                </tr>
+                <tr>
+                    <td>Temperatura del aire</td>
+                    <td><input type="text" name="temperatura_aire" id="temperatura_aire"></td>
+                </tr>
+                <tr>
+                    <td>Coordenadas</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;Latitud</td>
+                    <td><input type="text" name="latitud" id="latitud"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;Longitud</td>
+                    <td><input type="text" name="longitud" id="longitud"></td>
+                </tr>
+                <tr>
+                    <td>Direccion media</td>
+                    <td><input type="text" name="direccion_media" id="direccion_media"></td>
+                </tr>
+                <tr>
+                    <td>Periodo peak</td>
+                    <td><input type="text" name="periodo_peak" id="periodo_peak"></td>
+                </tr>
+                <tr>
+                    <td>Temperatura del agua</td>
+                    <td><input type="text" name="temperatura_agua" id="temperatura_agua"></td>
+                </tr>
+                <tr>
+                    <td>Humedad relativa</td>
+                    <td><input type="text" name="humedad_relativa" id="humedad_relativa"></td>
+                </tr>
+                <tr>
+                    <td>Boya</td>
+                    <td>
+                        <select name="boya" id="boya">
+                        <?php
+                        foreach(pg_fetch_all($result) as $row) {
+                            echo "<option value='".$row['id_boya']."'>".$row['id_boya']."</option>";
+                        }
+                        ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Enviar"></td>
+                </tr>
+
+            </table>
+
+
+        </form>
     </body>
 </html>
