@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>boya</title>
+    <title>boletin</title>
 </head>
 <body>
-    #sql query to update the values from form
-    $sql = "UPDATE boya SET
-            titulo = '$titulo',
-            descripcion = '$descripcion',
-            fecha = '$fecha',
-            imagen = '$imagen',
-            id_categoria = '$id_categoria'
-            WHERE id = '$id'";
-    #execute the query
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-</body>
+    <p>
+        <form action="./boletin-update.php" method="post">
+            <table>
+                
+                <tr>
+                    <td>sensor</td>
+                    <td><input type="text" name="sensor"></td>
+                <tr>
+                
+                <tr>
+                    <td>modelo</td>
+                    <td><input type="text" name="modelo"></td>
+                <tr>
+                <tr>
+                    <td>profundidad</td>
+                    <td><input type="text" name="profundidad"></td>
+                <tr>
+                <tr>
+                    <td>estado</td>
+                    <td><input type="text" name="estado"></td>
+                    
+                <tr>
+                    <td>nuevo_sensor</td>
+                    <td><input type="text" name="nuevo_sensor"></td>
+                <tr>
+                </tr>
+                <tr>
+                    <td>nuevo_modelo</td>
+                    <td><input type="text" name="nuevo_modelo"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_profundidad</td>
+                    <td><input type="text" name="nuevo_profundidad"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_estado</td>
+                    <td><input type="text" name="nuevo_estado"></td>
+                </tr>           
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
 </html>
