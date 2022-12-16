@@ -10,11 +10,18 @@ if (!$conn) {
 }
 #Get the values from the form boletin.html
 
-#Planos Costeros
-$region = $_POST['region'];
-
+#Publicaciones Nauticas
+$edicion = $_POST['edicion'];
+$sku = $_POST['sku_publicacion'];
 #sql query to delete the values from form
-$sql6 = "DELETE FROM planos_costeros WHERE region = '$region'";
-$result6 = pg_query($conn, $sql6);
+$sql = "DELETE FROM publicaciones_nauticas WHERE edicion = '$edicion' and sku_publicacion = '$sku'";
+$result = pg_query($conn, $sql);
+
+if ($result) {
+    echo "Se ha eliminado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
+
 
 ?>

@@ -10,12 +10,20 @@ if (!$conn) {
 }
 #Get the values from the form boletin.html
 
-#Vertices Geodesicos
+#Cotas Marea
 $latitud = $_POST['latitud'];
-$tipo_altura = $_POST['tipo_altura'];
+$region = $_POST['region'];
 
 #sql query to delete the values from form
-$sql8 = "DELETE FROM vertices_geodesicos WHERE latitud = '$latitud' AND tipo_altura = '$tipo_altura'";
-$result8 = pg_query($conn, $sql8);
+$sql5 = "DELETE FROM cotas_marea WHERE latitud = '$latitud' AND region = '$region'";
+$result5 = pg_query($conn, $sql5);
+#print the result
+if ($result5) {
+    echo "Se ha eliminado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
+
+
 
 ?>

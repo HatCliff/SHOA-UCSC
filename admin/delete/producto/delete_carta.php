@@ -24,7 +24,6 @@ $result4 = pg_query($conn, $sql4);
 #if the query was successful
 if ($result4) {
     echo "Se ha eliminado correctamente";
-    header("Location: ../../../../admin.php");
 } else {
     echo "Ha ocurrido un error";
 }
