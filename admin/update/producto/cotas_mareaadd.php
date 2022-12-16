@@ -13,10 +13,18 @@ if (!$conn) {
 #Cotas Marea
 $latitud = $_POST['latitud'];
 $region = $_POST['region'];
+$nueva_latitud = $_POST['nueva_latitud'];
+$nueva_region = $_POST['nueva_region'];
 
 #sql query to update the values from form
-$sql = "UPDATE cotas_marea SET latitud='$latitud', region='$region' WHERE id_cota=1";
+$sql = "UPDATE cotas_marea SET latitud='$nueva_latitud', region='$nueva_region' WHERE latitud='$latitud' AND region='$region'";
 
 $result = pg_query($conn, $sql);
+
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 
 ?>

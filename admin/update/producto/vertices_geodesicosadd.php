@@ -13,10 +13,19 @@ if (!$conn) {
 #Vertices Geodesicos
 $latitud = $_POST['latitud'];
 $tipo_altura = $_POST['tipo_altura'];
+$nueva_latitud = $_POST['nueva_latitud'];
+$nuevo_tipo_altura = $_POST['nuevo_tipo_altura'];
+
 
 #sql query to update the values from form
-$sql = "UPDATE vertices_geodesicos SET latitud='$latitud', tipo_altura='$tipo_altura' WHERE id_vertice=1";
+$sql = "UPDATE vertices_geodesicos SET latitud='$nueva_latitud', tipo_altura='$nuevo_tipo_altura' WHERE latitud='$latitud' AND tipo_altura='$tipo_altura'";
 
 $result = pg_query($conn, $sql);
+
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 
 ?>

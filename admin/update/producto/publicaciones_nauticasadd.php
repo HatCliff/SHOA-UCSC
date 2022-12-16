@@ -12,10 +12,17 @@ if (!$conn) {
 
 #Publicaciones Nauticas
 $edicion = $_POST['edicion'];
+$nueva_edicion = $_POST['nueva_edicion'];
 
 #sql query to update the values from form
-$sql = "UPDATE publicaciones_nauticas SET edicion='$edicion' WHERE id_publicacion=1";
+$sql = "UPDATE publicaciones_nauticas SET edicion='$nueva_edicion' WHERE edicion='$edicion'";
 
 $result = pg_query($conn, $sql);
+
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 
 ?>

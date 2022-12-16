@@ -15,9 +15,20 @@ $coordenadas = $_POST['coordenadas'];
 $nurnav_codigo = $_POST['nurnav_codigo'];
 $sistema_aviso = $_POST['sistema_aviso'];
 
+$nueva_ciudad = $_POST['nueva_ciudad'];
+$nueva_descripcion = $_POST['nueva_descripcion'];
+$nuevas_coordenadas = $_POST['nuevas_coordenadas'];
+$nuevo_nurnav_codigo = $_POST['nuevo_nurnav_codigo'];
+$nuevo_sistema_aviso = $_POST['nuevo_sistema_aviso'];
+
 #sql query to update the values from form
-$sql = "UPDATE radioaviso SET ciudad='$ciudad', descripcion='$descripcion', coordenadas='$coordenadas', nurnav_codigo='$nurnav_codigo', sistema_aviso='$sistema_aviso' WHERE id_radioaviso=1";
+$sql = "UPDATE radioaviso SET ciudad='$nueva_ciudad', descripcion='$nueva_descripcion', coordenadas='$nuevas_coordenadas', nurnav_codigo='$nuevo_nurnav_codigo', sistema_aviso='$nuevo_sistema_aviso' WHERE ciudad='$ciudad' AND descripcion='$descripcion' AND coordenadas='$coordenadas' AND nurnav_codigo='$nurnav_codigo' AND sistema_aviso='$sistema_aviso'";
 
 $result = pg_query($conn, $sql);
 
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 ?>

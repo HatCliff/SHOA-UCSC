@@ -12,10 +12,17 @@ if (!$conn) {
 
 #Planos Costeros
 $region = $_POST['region'];
+$nueva_region = $_POST['nueva_region'];
 
 #sql query to update the values from form
-$sql = "UPDATE planos_costero SET region='$region' WHERE id_plano=1";
+$sql = "UPDATE planos_costeros SET region='$nueva_region' WHERE region='$region'";
 
 $result = pg_query($conn, $sql);
+
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 
 ?>

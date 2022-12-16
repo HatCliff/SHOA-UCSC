@@ -16,11 +16,22 @@ $tipo_carta = $_POST['tipo_carta'];
 $escala = $_POST['escala'];
 $edicion = $_POST['edicion'];
 $datum = $_POST['datum'];
-$region = $_POST['region'];
+$region = $_POST['region'];}
+
+$nuevo_titulo = $_POST['nuevo_titulo'];
+$nuevo_tipo_carta = $_POST['nuevo_tipo_carta'];
+$nuevo_escala = $_POST['nuevo_escala'];
+$nuevo_edicion = $_POST['nuevo_edicion'];
+$nuevo_datum = $_POST['nuevo_datum'];
+$nuevo_region = $_POST['nuevo_region'];
 
 #sql query to update the values from form
-$sql = "UPDATE cartas_nauticas SET titulo='$titulo', tipo_carta='$tipo_carta', escala='$escala', edicion='$edicion', datum='$datum', region='$region' WHERE id_carta=1";
+$sql = "UPDATE cartas_nauticas SET titulo='$nuevo_titulo', tipo_carta='$nuevo_tipo_carta', escala='$nuevo_escala', edicion='$nuevo_edicion', datum='$nuevo_datum', region='$nuevo_region' WHERE titulo='$titulo' AND tipo_carta='$tipo_carta' AND escala='$escala' AND edicion='$edicion' AND datum='$datum' AND region='$region'";
 
 $result = pg_query($conn, $sql);
-
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 ?>

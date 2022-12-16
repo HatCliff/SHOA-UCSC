@@ -14,9 +14,19 @@ $fecha = $_POST['fecha'];
 $descripcion = $_POST['descripcion'];
 $referecia_geografica = $_POST['referecia_geografica'];
 
+$nueva_hora = $_POST['nueva_hora'];
+$nueva_fecha = $_POST['nueva_fecha'];
+$nueva_descripcion = $_POST['nueva_descripcion'];
+$nueva_referecia_geografica = $_POST['nueva_referecia_geografica'];
+
 #sql query to update the values from form
-$sql = "UPDATE snam SET hora='$hora', fecha='$fecha', descripcion='$descripcion', referecia_geografica='$referecia_geografica' WHERE id_snam=1";
+$sql = "UPDATE snam SET hora='$nueva_hora', fecha='$nueva_fecha', descripcion='$nueva_descripcion', referecia_geografica='$nueva_referecia_geografica' WHERE hora='$hora' AND fecha='$fecha' AND descripcion='$descripcion' AND referecia_geografica='$referecia_geografica'";
 
 $result = pg_query($conn, $sql);
 
+if ($result) {
+    echo "Se ha actualizado correctamente";
+} else {
+    echo "Ha ocurrido un error";
+}
 ?>
