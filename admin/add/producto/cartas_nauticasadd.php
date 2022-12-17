@@ -36,5 +36,11 @@ $sql2 = "INSERT INTO cartas_nauticas (id_producto,titulo,tipo_carta,escala,edici
 $result = pg_query($conn, $sql);
 $result2 = pg_query($conn, $sql2);
 
-
+#Display if the query was successful or not
+if (!$result2) {
+        echo "An error occurred.\n";
+        exit;
+    } else {
+        echo "Datos ingresados correctamente.\n";
+    }
 ?>

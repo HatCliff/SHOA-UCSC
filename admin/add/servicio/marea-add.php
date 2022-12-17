@@ -15,4 +15,11 @@ $sql = "INSERT INTO marea (id_servicio,altura, nombre_puerto)
 VALUES (3,'$altura', '$nombre_puerto')";
 $result = pg_query($conn, $sql);
 
+#Display if the query was successful or not
+if (!$result) {
+    echo "An error occurred.\n";
+    exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
+}
 ?>

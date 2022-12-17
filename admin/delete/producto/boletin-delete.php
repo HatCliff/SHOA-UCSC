@@ -18,5 +18,12 @@ $anio = $_POST['año'];
 $sql3 = "DELETE FROM boletin WHERE mes = '$mes' AND año = '$anio'";
 $result3 = pg_query($conn, $sql3);
 
+#Display if the query was successful or not
+if (!$result2) {
+    echo "An error occurred.\n";
+    exit;
+} else {
+    echo "Datos borrados correctamente.\n";
+}
 
 ?>

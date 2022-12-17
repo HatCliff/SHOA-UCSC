@@ -39,4 +39,6 @@ if (pg_query($conn, $sql)) {
 } else {
     echo "Error: " . $sql . "<br>" . pg_last_error($conn);
 }
+
+
 ?>

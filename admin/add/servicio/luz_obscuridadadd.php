@@ -34,5 +34,11 @@ VALUES ('$resultid','$orto_sol', '$ocaso_sol', '$aurora_civil', '$aurora_nautica
 $result4 = pg_query($conn, $sql4);
 
 
-
+#Display if the query was successful or not
+if (!$result2 && !$result3 && !$result4) {
+    echo "An error occurred.\n";
+    exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
+}
 ?>

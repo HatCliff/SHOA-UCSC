@@ -20,12 +20,12 @@ $sql2 = "INSERT INTO shoa(rut_empresa,director,subdirector,departamento) VALUES 
 #Insert sql query
 $result2 = pg_query($conn, $sql2);
 
-#Print registro agregado
-if ($result2) {
-    echo "Registro agregado";
+#Display if the query was successful or not
+if (!$result2) {
+    echo "An error occurred.\n";
+    exit;
 } else {
-    echo "Error";
+    echo "Datos ingresados correctamente.\n";
 }
 
-?>
 ?>

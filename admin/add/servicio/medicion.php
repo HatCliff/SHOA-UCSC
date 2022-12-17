@@ -9,10 +9,13 @@ if (!$conn) {
 }
 $sql = "SELECT * FROM boya";
 $result = pg_query($conn, $sql);
-#Check if the query was successful
+
+#Display if the query was successful or not
 if (!$result) {
     echo "An error occurred.\n";
     exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
 }
 ?>
 <!DOCTYPE html>

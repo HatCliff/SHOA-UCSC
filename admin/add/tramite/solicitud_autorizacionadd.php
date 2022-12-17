@@ -38,12 +38,10 @@ $result = pg_query($conn, $sql);
 $result2 = pg_query($conn, $sql2);
 
 #Display if the query was successful or not
-if (!$result) {
+if (!$result2  && !$result) {
         echo "An error occurred.\n";
         exit;
-} else {
-        echo "Datos ingresados correctamente";
-}
-
-
+    } else {
+        echo "Datos ingresados correctamente.\n";
+    }
 ?>

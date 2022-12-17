@@ -21,4 +21,11 @@ VALUES ('1','$sensor', '$modelo', '$profundidad', '$estado')";
 
 $result2 = pg_query($conn, $sql2);
 
+#Display if the query was successful or not
+if (!$result2) {
+    echo "An error occurred.\n";
+    exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
+}
 ?>

@@ -17,4 +17,12 @@ $referecia_geografica = $_POST['referecia_geografica'];
 #sql query to insert the values
 $sql2 = "INSERT INTO snam (hora, fecha, descripcion, referecia_geografica) VALUES ('$hora', '$fecha', '$descripcion', '$referecia_geografica')";
 $result2 = pg_query($conn, $sql2);
+
+#Display if the query was successful or not
+if (!$result2) {
+    echo "An error occurred.\n";
+    exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
+}
 ?>

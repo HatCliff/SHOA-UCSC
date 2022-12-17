@@ -20,11 +20,12 @@ $sql2 = "INSERT INTO radioaviso (id_servicio,ciudad, descripcion, coordenada, nu
 VALUES ('4','$ciudad', '$descripcion', '$coordenadas', '$nurnav_codigo', '$sistema_aviso')";
 $result2 = pg_query($conn, $sql2);
 
-#Check if the query was successful
+#Display if the query was successful or not
 if (!$result2) {
     echo "An error occurred.\n";
     exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
 }
-
 
 ?>

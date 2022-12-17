@@ -31,4 +31,12 @@ humedad_relativa, id_boya) VALUES ('$fecha', '$hora', '$velocidad_viento', '$vel
 '$altura_significativa', '$altura_maxima', '$temperatura_aire', '$latitud', '$longitud' , '$direccion_media', 
 '$periodo_peak', '$temperatura_agua', '$humedad_relativa', '$boya')";
 $result2 = pg_query($conn, $sql2);
+
+#Display if the query was successful or not
+if (!$result2) {
+    echo "An error occurred.\n";
+    exit;
+} else {
+    echo "Datos ingresados correctamente.\n";
+}
 ?>
