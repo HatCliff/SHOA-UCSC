@@ -25,10 +25,8 @@ $organizacion = $_POST['organizacion'];
 $nombre_solicitante = $_POST['nombre_solicitante'];
 $detalle_datos = $_POST['detalle_datos'];
 
-#sql query to insert the values on product
-$sql = "INSERT INTO Tramite (rut_empresa, correo_electronico, contraseña, nombre, telefono, direccion)
-        VALUES ('$rut_empresa', '$correo_electronico', '$contraseña', '$nombre', '$telefono', '$direccion')";
-
+#Same as above but not inserting, just deleting
+$sql = "DELETE FROM Tramite WHERE rut_empresa = '$rut_empresa' AND correo_electronico = '$correo_electronico' AND contraseña = '$contraseña' AND nombre = '$nombre' AND telefono = '$telefono' AND direccion = '$direccion'";
 #Insert sql query
 $result = pg_query($conn, $sql);
 

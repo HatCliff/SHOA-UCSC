@@ -27,14 +27,11 @@ $actividad_giro = $_POST['actividad_giro'];
 $nacionalidad = $_POST['nacionalidad'];
 $tipo_autoriacion = $_POST['tipo_autorizacion'];
 
-#sql query to insert the values on product
-$sql = "DELETE FROM Tramite (rut_empresa, correo_electronico, contraseña, nombre, telefono, direccion)
-        VALUES ('$rut_empresa', '$correo_electronico', '$contraseña', '$nombre', '$telefono', '$direccion')";
+#same as above but not inserting, just deleting
+$sql = "DELETE FROM Tramite WHERE rut_empresa = '$rut_empresa' AND correo_electronico = '$correo_electronico' AND contraseña = '$contraseña' AND nombre = '$nombre' AND telefono = '$telefono' AND direccion = '$direccion'";
+$sql2 = "DELETE FROM solicitud_autorizacion WHERE rut_emp_solicitud = '$rut_empresa' AND rut_representante_sol = '$rut_representante_solicitud' AND nombre_rep = '$nombre_representante_solicitud' AND empresa_institucion = '$empresa_institucion' AND razon_social = '$razon_social' AND actividad_giro = '$actividad_giro' AND nacionalidad = '$nacionalidad' AND tipo_autorizacion = '$tipo_autoriacion'";
 
-$sql2 = "DELETE FROM solicitud_autorizacion WHERE rut_emp_solicitud = '$rut_empresa', rut_representante_sol = '$rut_representante_solicitud' , 
-        nombre_rep = '$nombre_representante_solicitud', empresa_institucion='$empresa_institucion',
-        razon_social='$razon_social', actividad_giro='$actividad_giro', nacionalidad = '$nacionalidad',
-        tipo_autorizacion='$tipo_autoriacion')";
+
 #Insert sql query
 $result = pg_query($conn, $sql);
 $result2 = pg_query($conn, $sql2);
