@@ -1,23 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Medicion</title>
-    </head>
-    <body>
-        #sql query to update the values from form
-        $sql = "UPDATE medicion SET
-                titulo = '$titulo',
-                descripcion = '$descripcion',
-                fecha = '$fecha',
-                imagen = '$imagen',
-                id_categoria = '$id_categoria'
-                WHERE id = '$id'";
-        #execute the query
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updating record: " . mysqli_error($conn);
-        }
-    </body>
+<head>
+    <title>boletin</title>
+</head>
+<body>
+    <p>
+        <form action="./boletin-update.php" method="post">
+            <table>
+
+
+                <tr>
+                    <td>fecha</td>
+                    <td><input type="text" name="fecha"></td>
+                </tr>
+                <tr>
+                    <td>hora</td>
+                    <td><input type="text" name="hora"></td>
+                </tr>
+                <tr>
+                    <td>velocidad_viento</td>
+                    <td><input type="text" name="velocidad_viento"></td>
+                </tr>
+                <tr>
+                    <td>direccion_viento</td>
+                    <td><input type="text" name="direccion_viento"></td>
+                </tr>
+                <tr>
+                    <td>velocidad_maxima_viento</td>
+                    <td><input type="text" name="velocidad_maxima_viento"></td>
+                </tr>
+                <tr>
+                    <td>altura_significativa</td>
+                    <td><input type="text" name="altura_significativa"></td>
+                </tr>
+                <tr>
+                    <td>altura_maxima</td>
+                    <td><input type="text" name="altura_maxima"></td>
+                </tr>
+                <tr>
+                    <td>direccion_maxima</td>
+                    <td><input type="text" name="direccion_maxima"></td>
+                </tr>
+                <tr>
+                    <td>temperatura_aire</td>
+                    <td><input type="text" name="temperatura_aire"></td>
+                </tr>
+                <tr>
+                    <td>coordenadas</td>
+                    <td><input type="text" name="coordenadas"></td>
+                </tr>
+                <tr>
+                    <td>direccion_media</td>
+                    <td><input type="text" name="direccion_media"></td>
+                </tr>
+                <tr>
+                    <td>periodo_peak</td>
+                    <td><input type="text" name="periodo_peak"></td>
+                </tr>
+                <tr>
+                    <td>temperatura_agua</td>
+                    <td><input type="text" name="temperatura_agua"></td>
+                </tr>                
+                <tr>
+                    <td>humedad_relativa</td>
+                    <td><input type="text" name="humedad_relativa"></td>
+                </tr>
+                <tr>
+                    <td>boya</td>
+                    <td><input type="text" name="boya"></td>
+                </tr>
+                <tr>
+                    <td>nueva_fecha</td>
+                    <td><input type="text" name="nueva_fecha"></td>
+                </tr>
+                <tr>
+                    <td>nueva_hora</td>
+                    <td><input type="text" name="nueva_hora"></td>
+                </tr>
+                <tr>
+                    <td>nueva_velocidad_viento</td>
+                    <td><input type="text" name="nueva_velocidad_viento"></td>
+                </tr>
+                <tr>
+                    <td>nueva_direccion_viento</td>
+                    <td><input type="text" name="nueva_direccion_viento"></td>
+                </tr>
+                <tr>
+                    <td>nueva_velocidad_maxima_viento</td>
+                    <td><input type="text" name="nueva_velocidad_maxima_viento"></td>
+                </tr>
+                <tr>
+                    <td>nueva_altura_significativa</td>
+                    <td><input type="text" name="nueva_altura_significativa"></td>
+                </tr>
+                <tr>
+                    <td>nueva_altura_maxima</td>
+                    <td><input type="text" name="nueva_altura_maxima"></td>
+                </tr>
+                <tr>
+                    <td>nueva_direccion_maxima</td>
+                    <td><input type="text" name="nueva_direccion_maxima"></td>
+                </tr>
+                <tr>
+                    <td>nueva_temperatura_aire</td>
+                    <td><input type="text" name="nueva_temperatura_aire"></td>
+                </tr>
+                <tr>
+                    <td>nueva_coordenadas</td>
+                    <td><input type="text" name="nueva_coordenadas"></td>
+                </tr>
+                <tr>
+                    <td>nueva_direccion_media</td>
+                    <td><input type="text" name="nueva_direccion_media"></td>
+                </tr>
+                <tr>
+                    <td>nueva_periodo_peak</td>
+                    <td><input type="text" name="nueva_periodo_peak"></td>
+                </tr>
+                <tr>
+                    <td>nueva_temperatura_agua</td>
+                    <td><input type="text" name="nueva_temperatura_agua"></td>
+                </tr>
+                <tr>
+                    <td>nueva_humedad_relativa</td>
+                    <td><input type="text" name="nueva_humedad_relativa"></td>
+                </tr>
+                <tr>
+                    <td>nueva_boya</td>
+                    <td><input type="text" name="nueva_boya"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
 </html>

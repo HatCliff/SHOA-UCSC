@@ -1,33 +1,11 @@
-<!doctype html>
-<html>
-<head>
-    <title>publicaciones_nauticas</title>
-</head>
-<body>
-    #sql query to update the values from form
-    $sql = "UPDATE publicaciones_nauticas SET
-            titulo = '$titulo',
-            descripcion = '$descripcion',
-            fecha = '$fecha',
-            imagen = '$imagen',
-            id_categoria = '$id_categoria'
-            WHERE id = '$id'";
-    #execute the query
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-</body>
-</html><!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>publicaciones_nauticas</title>
 </head>
 <body>
     <p>
-        <form action="./publicaciones_nauticasadd.php" method="post">
+        <form action="./publicaciones_nauticas.php" method="post">
             <table>
                 <tr>
                     <td>rut_empresa</td>

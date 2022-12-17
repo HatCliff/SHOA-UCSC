@@ -1,23 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>luz_obscuridad</title>
+    <title>boletin</title>
 </head>
 <body>
-    #sql query to update the values from form
-    $sql = "UPDATE luz_obscuridad SET
-            titulo = '$titulo',
-            descripcion = '$descripcion',
-            fecha = '$fecha',
-            imagen = '$imagen',
-            id_categoria = '$id_categoria'
-            WHERE id = '$id'";
-    #execute the query
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-</body>
-</html>
+    <p>
+        <form action="./boletin-update.php" method="post">
+            <table>
+                <tr>
+                    <td>fecha</td>
+                    <td><input type="text" name="fecha"></td>
+                </tr>
+                <tr>
+                    <td>hora</td>
+                    <td><input type="text" name="hora"></td>
+                </tr>
+                <tr>
+                    <td>orto_luna</td>
+                    <td><input type="text" name="orto_luna"></td>
+                </tr>
+                <tr>
+                    <td>ocaso_luna</td>
+                    <td><input type="text" name="ocaso_luna"></td>
+                <tr>
+                    <td>orto_sol</td>
+                    <td><input type="text" name="orto_sol"></td>
+                </tr>
+                <tr>
+                    <td>ocaso_sol</td>
+                    <td><input type="text" name="ocaso_sol"></td>
+                </tr>
+                <tr>
+                    <td>aurora_civil</td>
+                    <td><input type="text" name="aurora_civil"></td>
+                </tr>
+
+                <tr>
+                    <td>aurora_nautica</td>
+                    <td><input type="text" name="aurora_nautica"></td>
+                </tr>
+
+                <tr>
+                    <td>crepusculo_civil</td>
+                    <td><input type="text" name="crepusculo_civil"></td>
+                </tr>
+                <tr>
+                    <td>crepusculo_nautico</td>
+                    <td><input type="text" name="crepusculo_nautico"></td>
+                </tr>               
+
+
+                <tr>
+                    <td>nuevo_fecha</td>
+                    <td><input type="text" name="nuevo_fecha"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_hora</td>
+                    <td><input type="text" name="nuevo_hora"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_orto_luna</td>
+                    <td><input type="text" name="nuevo_orto_luna"></td>
+
+                </tr>
+                <tr>
+                    <td>nuevo_ocaso_luna</td>
+                    <td><input type="text" name="nuevo_ocaso_luna"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_orto_sol</td>
+                    <td><input type="text" name="nuevo_orto_sol"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_ocaso_sol</td>
+                    <td><input type="text" name="nuevo_ocaso_sol"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_aurora_civil</td>
+                    <td><input type="text" name="nuevo_aurora_civil"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_aurora_nautica</td>
+                    <td><input type="text" name="nuevo_aurora_nautica"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_crepusculo_civil</td>
+                    <td><input type="text" name="nuevo_crepusculo_civil"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_crepusculo_nautico</td>
+                    <td><input type="text" name="nuevo_crepusculo_nautico"></td>
+                </tr>
+               <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
+</html><

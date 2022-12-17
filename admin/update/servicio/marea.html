@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>marea</title>
+    <title>boletin</title>
 </head>
 <body>
-    #sql query to update the values from form
-    $sql = "UPDATE marea SET
-            titulo = '$titulo',
-            descripcion = '$descripcion',
-            fecha = '$fecha',
-            imagen = '$imagen',
-            id_categoria = '$id_categoria'
-            WHERE id = '$id'";
-    #execute the query
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-</body>
+    <p>
+        <form action="./marea.php" method="post">
+            <table>
+                <tr>
+                    <td>altura</td>
+                    <td><input type="text" name="altura"></td>
+                </tr>
+                <tr>
+                    <td>nombre_puerto</td>
+                    <td><input type="text" name="nombre_puerto"></td>
+                </tr>
+               <tr>
+                    <td>nombre_altura</td>
+                    <td><input type="text" name="nombre_altura"></td>
+                </tr>
+                <tr>
+                    <td>nuevo_altura</td>
+                    <td><input type="text" name="nuevo_altura"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
 </html>

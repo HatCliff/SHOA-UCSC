@@ -1,23 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>radioaviso</title>
-    </head>
-    <body>
-        #sql query to update the values from form
-        $sql = "UPDATE radioaviso SET
-                titulo = '$titulo',
-                descripcion = '$descripcion',
-                fecha = '$fecha',
-                imagen = '$imagen',
-                id_categoria = '$id_categoria'
-                WHERE id = '$id'";
-        #execute the query
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updating record: " . mysqli_error($conn);
-        }
-    </body>
+<head>
+    <title>boletin</title>
+</head>
+<body>
+    <p>
+        <form action="./boletin-update.php" method="post">
+            <table>
+
+
+                <tr>
+                    <td>ciudad</td>
+                    <td><input type="text" name="ciudad"></td>
+                </tr>
+                <tr>
+
+
+                    <td>descripcion</td>
+                    <td><input type="text" name="descripcion"></td>
+                </tr>
+                <tr>
+                    <td>coordenadas</td>
+                    <td><input type="text" name="coordenadas"></td>
+                </tr>
+                <tr>
+                    <td>nurnav_codigo</td>
+                    <td><input type="text" name="nurnav_codigo"></td>
+                </tr>
+                <tr>
+                    <td>sistema_aviso</td>
+                    <td><input type="text" name="sistema_aviso"></td>
+
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
 </html>

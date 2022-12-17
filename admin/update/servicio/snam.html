@@ -4,20 +4,31 @@
     <title>snam</title>
 </head>
 <body>
-    #sql query to update the values from form
-    $sql = "UPDATE snam SET
-            titulo = '$titulo',
-            descripcion = '$descripcion',
-            fecha = '$fecha',
-            imagen = '$imagen',
-            id_categoria = '$id_categoria'
-            WHERE id = '$id'";
-    #execute the query
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "Record updated successfully";
-    } else {
-        echo "Error updating record: " . mysqli_error($conn);
-    }
-</body>
+    <p>
+        <form action="./snam.php" method="post">
+            <table>
+
+                <tr>
+                    <td>hora</td>
+                    <td><input type="text" name="hora"></td>
+                </tr>
+                <tr>
+
+                    <td>fecha</td>
+                    <td><input type="text" name="fecha"></td>
+                </tr>
+                <tr>
+                    <td>descripcion</td>
+                    <td><input type="text" name="descripcion"></td>
+                </tr>
+                <tr>
+                    <td>referecia_geografica</td>
+                    <td><input type="text" name="referecia_geografica"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </p>
 </html>
